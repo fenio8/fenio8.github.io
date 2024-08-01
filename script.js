@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentImageIndex = 0;
 
     // Configurar el volumen inicial
-    audio.volume = 0.1;
+    audio.volume = 0.25;
 
     // Función para cambiar el fondo según el estado del audio
     function updateBackground() {

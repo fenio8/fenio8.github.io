@@ -3,11 +3,10 @@
 body {
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    background-image: url("https://ih1.redbubble.net/image.1031972376.5594/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg");
     background-repeat: no-repeat;
-    background-position: left bottom;
+    background-position: center;
     background-attachment: fixed;
-    background-size: 25%;
+    background-size: cover;
     background-color: #f8f8f8;
     margin: 0;
     padding: 0;
@@ -15,6 +14,21 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transition: background-image 0.5s ease;
+}
+
+body.playing {
+    background-image: url("./img/stitchbailando2.gif");
+}
+
+body.paused {
+    background-image: url('./img/stitch2.gif');
+}
+
+.audio-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 h2,
@@ -148,7 +162,7 @@ p {
         background-size: 50% auto;
         background-position: center bottom;
         padding-bottom: 50%;
-        /* Espacio para la imagen de fondo */
+
     }
 
     .main-title {
@@ -165,6 +179,18 @@ p {
 
     .letter {
         margin-bottom: 20vh;
-        /* Ajusta según sea necesario */
+
+    }
+}
+
+@media (min-width: 1024px) {
+    body.playing {
+        background-position: left bottom;
+        background-size: 25%;
+    }
+
+    body.paused {
+        background-position: left bottom;
+        background-size: 25%;
     }
 }

@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Caveat|Pacifico&display=swap&subset=latin-ext');
-
+@import url('https://fonts.googleapis.com/css?family=Caveat|Pacifico|Roboto|Lora&display=swap&subset=latin-ext');
 
 body {
     text-align: center;
@@ -10,13 +9,17 @@ body {
     background-attachment: fixed;
     background-size: 25%;
     background-color: #f8f8f8;
-
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 h2,
 h1 {
     font-family: 'Lora', serif;
-
 }
 
 .heart {
@@ -43,14 +46,15 @@ h1 {
 
 .letter {
     background-color: #E7DCDE;
-    width: 400px;
-    padding: 48px;
+    width: 90%;
+    max-width: 400px;
+    padding: 5%;
     position: relative;
-    max-width: 90vw;
     margin: 5vh auto;
     border-radius: 15px;
     border: 2px solid #6E4667;
-
+    box-sizing: border-box;
+    z-index: 1;
 }
 
 .modal-window {
@@ -69,16 +73,16 @@ h1 {
 .modal-window>div {
     border-radius: 15px;
     border: 2px solid;
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 2em;
+    padding: 5%;
     background: #ffffff;
     color: #333333;
-
-
+    box-sizing: border-box;
 }
 
 .modal-close {
@@ -98,24 +102,8 @@ h1 {
     pointer-events: auto;
 }
 
-
 .letter {
-    -webkit-animation-name: fadeIn;
-    animation-name: fadeIn;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-
-@-webkit-keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
+    animation: fadeIn 1s both;
 }
 
 @keyframes fadeIn {
@@ -130,17 +118,12 @@ h1 {
 
 .main-title {
     font-family: 'Pacifico', cursive;
+    font-size: 1.5em;
 }
 
 p {
-    font-size: 22px;
+    font-size: 1.2em;
     font-family: 'Caveat', cursive;
-}
-
-.giphy-embed {
-    pointer-events: none;
-    padding: 1px;
-    position: relative;
 }
 
 .image-container {
@@ -153,4 +136,35 @@ p {
     width: 100%;
     height: auto;
     display: block;
+}
+
+.caption {
+    padding: 2px;
+    position: relative;
+}
+
+@media (max-width: 600px) {
+    body {
+        background-size: 50% auto;
+        background-position: center bottom;
+        padding-bottom: 50%;
+        /* Espacio para la imagen de fondo */
+    }
+
+    .main-title {
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .heart {
+        width: 50px;
+    }
+
+    .letter {
+        margin-bottom: 20vh;
+        /* Ajusta según sea necesario */
+    }
 }
